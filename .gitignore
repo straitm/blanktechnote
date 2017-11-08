@@ -1,0 +1,13 @@
+*.aux
+*.log
+*.nav
+*.out
+*.bbl
+*.blg
+blanktechnote.pdf
+*.snm
+*.toc
+*.swp
+commands.aux
+texput.log
+tmp
