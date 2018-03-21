@@ -3,7 +3,7 @@
 doit()
 {
   flag=$1
-  cat secondaryprotons.tex \
+  cat blanktechnote.tex \
   | tr ' ' '\n' \
   | tr -d ' .,:' \
   | uniq -c \
