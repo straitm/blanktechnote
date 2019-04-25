@@ -5,7 +5,17 @@
 %\usepackage{lmodern}
 
 \usepackage[toc,page]{appendix}
-\usepackage[colorlinks,citecolor=cyan]{hyperref}
+\usepackage[colorlinks,citecolor=cyan,backref=page]{hyperref}
+\renewcommand*{\backrefalt}[4]{%
+  \ifcase #1 %
+    No citations.%
+  \or
+    See p.~#2.%
+  \else
+    See pp.~#2.%
+  \fi
+}
+
 
 \usepackage{cite}
 \usepackage{xspace}
