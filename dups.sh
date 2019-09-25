@@ -19,4 +19,13 @@ if doit -q; then
   doit
   exit 1
 fi
+
+g="grep -iE 'functionality|actually|basically|utilize|methodology|essentially' $files"
+
+if $g -q; then
+  echo Obnoxious words:
+  $g
+  exit 1
+fi
+
 exit 0
