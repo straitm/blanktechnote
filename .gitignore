@@ -4,6 +4,7 @@
 *.out
 *.bbl
 *.blg
+*.brf
 blanktechnote.pdf
 *.snm
 *.toc
@@ -11,3 +12,4 @@ blanktechnote.pdf
 commands.aux
 texput.log
 tmp
+.nfs*
