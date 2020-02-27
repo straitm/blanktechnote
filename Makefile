@@ -11,13 +11,13 @@
 # compatibility, you must explicitly request it."
 .DELETE_ON_ERROR:
 
-all: blanktechnote.pdf
+name=blanktechnote
+
+all: $(name).pdf
 
 figures=
 
 tables=
-
-name=blanktechnote
 
 $(name).pdf: $(name).bib $(name).tex Makefile commands.tex $(figures)
 	@echo Checking for duplicated words

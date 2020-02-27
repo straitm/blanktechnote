@@ -1,9 +1,11 @@
 #!/bin/bash
 
+files=$(grep -m 1 name= Makefile | cut -d= -f 2).tex
+
 doit()
 {
   flag=$1
-  cat blanktechnote.tex \
+  cat $files \
   | tr ' ' '\n' \
   | tr -d ' .,:' \
   | uniq -c \
