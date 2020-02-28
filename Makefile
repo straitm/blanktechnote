@@ -48,6 +48,6 @@ $(name).pdf: $(name).bib $(name).tex Makefile commands.tex $(figures)
 clean:
 	rm -f $(name).toc $(name).pdf $(name).aux $(name).log \
         $(name).spl $(name).nav $(name).bbl $(name).blg \
-		    $(name).snm $(name).out \
+		    $(name).snm $(name).out $(name).brf \
 			  commands.aux \
         tmp* texput.log $(figures)
