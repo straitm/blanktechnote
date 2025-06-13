@@ -20,30 +20,7 @@ figures=
 tables=
 
 $(name).pdf: $(name).bib $(name).tex Makefile commands.tex $(figures)
-	@echo Checking for duplicated words
-	@./dups.sh
-	@echo pdflatex for note pass 1
-	@if ! pdflatex -interaction=errorstopmode -halt-on-error $(name).tex &> tmp; then \
-      cat tmp; false;\
-    else\
-      true;\
-    fi
-	@echo bibtex for note pass 2
-	@if ! bibtex $(name) &> tmp; then cat tmp; false; fi
-	@echo pdflatex for note pass 2
-	@if ! pdflatex -interaction=errorstopmode -halt-on-error $(name).tex &> tmp; then \
-      cat tmp; false;\
-    else\
-      true;\
-    fi
-	@echo pdflatex for note pass 3
-	@if ! pdflatex -interaction=errorstopmode -halt-on-error $(name).tex &> tmp; then \
-      cat tmp; false;\
-    else\
-      grep -iEA1 'warning|undefined|hbox|rerun ' tmp;\
-      true;\
-    fi
-
+	./build.sh $(name)
 
 clean:
 	rm -f $(name).toc $(name).pdf $(name).aux $(name).log \
